@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class NewAddressBook {
 	Scanner sc = new Scanner(System.in);
+	ContactDetails person = new ContactDetails();
 
 	public void addContact() {
-		ContactDetails person = new ContactDetails();
 		System.out.println("Enter First Name: ");
 		String firstName = sc.nextLine();
 		System.out.println("Enter last Name: ");
@@ -34,7 +34,7 @@ public class NewAddressBook {
 	}
 
 	public void editContact() {
-		ContactDetails person = new ContactDetails();
+//        ContactDetails person = new ContactDetails();
 		System.out.println("Enter the First Name of person");
 		String editName = sc.nextLine();
 		if (editName.equalsIgnoreCase(person.getFirstName()))
@@ -42,5 +42,14 @@ public class NewAddressBook {
 		else
 			System.out.println("The Entered First Name Is Not Match");
 		editContact();
+	}
+
+	public void deleteContact() {
+		System.out.println("Enter firstName of the person");
+		String editName = sc.nextLine();
+		if (editName.equals(person.getFirstName())) {
+			System.out.println("Deleted " + person.getFirstName() + " details");
+			person = null;
+		}
 	}
 }
