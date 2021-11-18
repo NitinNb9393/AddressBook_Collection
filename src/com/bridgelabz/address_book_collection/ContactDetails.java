@@ -5,9 +5,9 @@ public class ContactDetails {
 	private String lastName;
 	private String addressCity;
 	private String state;
-	private int zip;
-	private long phoneNumber;
 	private String email;
+	private Long zip;
+	private Long phoneNumber;
 
 	public ContactDetails(String firstName, String lastName, String addressCity, String state, String email, Long zip,
 			Long phoneNumber) {
@@ -17,8 +17,12 @@ public class ContactDetails {
 		this.addressCity = addressCity;
 		this.state = state;
 		this.email = email;
-		this.zip = Math.toIntExact(zip);
+		this.zip = zip;
 		this.phoneNumber = phoneNumber;
+	}
+
+	public ContactDetails(String firstName, String lastName, String address, String state, String zipcode,
+			String phoneNumber, String email, String cityForMap) {
 	}
 
 	public String getFirstName() {
@@ -53,22 +57,6 @@ public class ContactDetails {
 		this.state = state;
 	}
 
-	public int getZip() {
-		return zip;
-	}
-
-	public void setZip(int zip) {
-		this.zip = zip;
-	}
-
-	public int getPhoneNumber() {
-		return (int) phoneNumber;
-	}
-
-	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -77,11 +65,26 @@ public class ContactDetails {
 		this.email = email;
 	}
 
+	public long getZip() {
+		return zip;
+	}
+
+	public void setZip(long zip) {
+		this.zip = zip;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	@Override
 	public String toString() {
-		return "firstName= " + firstName + '\'' + "lastName=" + lastName + '\'' + "addressCity=" + addressCity + '\''
-				+ "state=" + state + '\'' + "email=" + email + '\'' + "zip=" + zip + '\'' + "phoneNumber=" + phoneNumber
-				+ '\'';
-
+		return "ContactDetails{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\''
+				+ ", addressCity='" + addressCity + '\'' + ", state='" + state + '\'' + ", email='" + email + '\''
+				+ ", zip=" + zip + ", phoneNumber=" + phoneNumber + '}';
 	}
 }
