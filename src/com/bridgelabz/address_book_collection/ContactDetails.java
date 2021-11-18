@@ -6,12 +6,11 @@ public class ContactDetails {
 	private String addressCity;
 	private String state;
 	private String email;
-	private Long zip;
-	private Long phoneNumber;
+	private String zip;
+	private String phoneNumber;
 
-	public ContactDetails(String firstName, String lastName, String addressCity, String state, String email, Long zip,
-			Long phoneNumber) {
-		super();
+	ContactDetails(String name, String firstName, String lastName, String addressCity, String state, String email,
+			String zip, String phoneNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.addressCity = addressCity;
@@ -21,11 +20,8 @@ public class ContactDetails {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public ContactDetails(String firstName, String lastName, String address, String state, String zipcode,
-			String phoneNumber, String email, String cityForMap) {
-	}
-
 	public String getFirstName() {
+
 		return firstName;
 	}
 
@@ -34,10 +30,12 @@ public class ContactDetails {
 	}
 
 	public String getLastName() {
+
 		return lastName;
 	}
 
 	public void setLastName(String lastName) {
+
 		this.lastName = lastName;
 	}
 
@@ -50,14 +48,17 @@ public class ContactDetails {
 	}
 
 	public String getState() {
+
 		return state;
 	}
 
 	public void setState(String state) {
+
 		this.state = state;
 	}
 
 	public String getEmail() {
+
 		return email;
 	}
 
@@ -65,19 +66,22 @@ public class ContactDetails {
 		this.email = email;
 	}
 
-	public long getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(long zip) {
+	public void setZip(String zip) {
+
 		this.zip = zip;
 	}
 
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
+
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
+
 		this.phoneNumber = phoneNumber;
 	}
 

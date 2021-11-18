@@ -17,17 +17,28 @@ public class NewAddressBook {
 
 	ArrayList<ContactDetails> contactList = new ArrayList<>();
 
-	public void addContact(ContactDetails contact) {
-		for (ContactDetails value : contactList) {
-			if (value.equals(contact)) {
-				System.out.println("The person already exists!!!");
+	public boolean checkDuplicateEntry(ContactDetails contact) {
+		boolean check = false;
+		for (ContactDetails duplicateEntry : contactList) {
+			if (duplicateEntry.equals(contact)) {
+				check = true;
+			} else {
+				check = false;
 			}
 		}
-		contactList.add(contact);
-		System.out.println("ADDRESS BOOK---> " + contactList);
-		for (ContactDetails contact1 : contactList) {
-			System.out.println("CONTACT LIST---> " + contact1);
+		return check;
+	}
+
+	public boolean addContact(ContactDetails contact) {
+		boolean entryCheck = checkDuplicateEntry(contact);
+		if (!entryCheck) {
+			contactList.add(contact);
+			System.out.println("Contact added successfully!!");
+		} else {
+			System.out.println("The person already exists!!!");
 		}
+		System.out.println("Address Book Data : " + contactList);
+		return true;
 	}
 
 	public void editContact(String firstName) {
@@ -71,13 +82,13 @@ public class NewAddressBook {
 					case 6:
 						System.out.println("Enter new zipcode:");
 						String newZipcode = sc.next();
-						contact.setZip(choice.longValue());
+						contact.setZip(newZipcode);
 						System.out.println(contact);
 						break;
 					case 7:
 						System.out.println("Enter new phone number :");
 						String newPhone = sc.next();
-						contact.setPhoneNumber(choice.longValue());
+						contact.setPhoneNumber(newPhone);
 						System.out.println(contact);
 						break;
 					case 8:
