@@ -9,6 +9,18 @@ public class ContactDetails {
 	private long phoneNumber;
 	private String email;
 
+	public ContactDetails(String firstName, String lastName, String addressCity, String state, String email, Long zip,
+			Long phoneNumber) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.addressCity = addressCity;
+		this.state = state;
+		this.email = email;
+		this.zip = Math.toIntExact(zip);
+		this.phoneNumber = phoneNumber;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
