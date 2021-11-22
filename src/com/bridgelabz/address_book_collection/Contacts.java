@@ -81,7 +81,4 @@ public class Contacts {
 		this.email = email;
 	}
 
-	protected void remove(Contacts contacts) {
-
-	}
 }
